@@ -1,0 +1,17 @@
+.myNav{
+    text-decoration: none;
+    color: rgb(242, 242, 242);
+    font-weight: bold;
+    font-size: 1.2rem;
+
+
+}
+.loginHtml{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.loginHtml input{
+    width: 3rem;
+}

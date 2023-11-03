@@ -1,0 +1,41 @@
+.loginHtml{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
+}
+.loginHtml input{
+    width: 16rem;
+    height: 2rem;
+    margin: 4px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+}
+.loginHtml a{
+    margin: 9px;
+    text-decoration: none;
+    font-size: 2rem;
+    color: lightskyblue;
+}
+.loginHtml a:hover{
+    background-color: #79d986;
+    color: blue;
+}
+.loginHtml button{
+    width: 7rem;
+    height: 1.5rem;
+    border: 4px solid blue;
+    border-radius: 30%;
+    color: blue;
+    background-color: #79d986;
+    text-align: center;
+}
+.home{
+    font-size: 2rem;
+    font-weight: bold;
+    color:black;
+
+}
