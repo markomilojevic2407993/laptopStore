@@ -113,7 +113,7 @@ $laptop=$rezultat->fetch_all(MYSQLI_ASSOC);
                 <div class="card-body">
                     <h5 class= "card-title"><?= $lap['model'];?></h5>
                     <p class="card-text"><?= $lap['marka'];?></p>
-                    <a href="vise.php?id=<?= $lap['id'];?>" class="btn btn-info">Vise o proizvodu-></a>
+                    <a href="more.php?id=<?= $lap['id'];?>" class="btn btn-info">Vise o proizvodu-></a>
                     <h3><?= $lap['cena']?>:rsd</h3>
                 </div>
             </div>

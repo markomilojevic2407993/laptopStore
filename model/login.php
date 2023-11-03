@@ -1,6 +1,6 @@
 <?php 
 //id	marka	model	opis	slika
-//require_once "model/baza.php";
+require_once "baza.php";
 
 
 if(!isset($_POST['email']) || empty($_POST['email'])){
@@ -12,14 +12,23 @@ if(!isset($_POST['pass']) || empty($_POST['pass'])){
 $email=$_POST['email'];
 $pass=$_POST['pass'];
 
+$rezultat=$baza->query("SELECT * FROM korisnici WHERE email='$email' AND pass='$pass'");
+if($rezultat->num_rows>0){
+    if(session_status()==PHP_SESSION_NONE){
+        session_start();
+    }
+    $_SESSION['email']=$email;
 
-
-if(session_status()==PHP_SESSION_NONE){
-    session_start();
+    header('Location: ../index.php');
+}else{
+    header('refresh:2; URL=../loginHtml.php');
+    die('Neispravan email ili lozinka ');
+    
 }
 
-$_SESSION['email']=$email;
 
-header('Location: ../index.php');
+
+
+
 
 ?>
