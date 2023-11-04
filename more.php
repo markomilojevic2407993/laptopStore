@@ -48,14 +48,16 @@ if(session_status()==PHP_SESSION_NONE){
 <body>
 <div class="container text-center bg-primary navigacija">
         <div class="row">
-        
-            <div class="col">
-                <?php if(isset($_SESSION['email'])):?>
+        <div class="col">
+        <?php if(isset($_SESSION['email'])):?>
                     <p>pozdrav:<?=$_SESSION['email'];?></p>
                     <a class="btn btn-danger" href="model/logout.php">Logout</a>
                 <?php endif;?>
+        </div>
+            <div class="col">
                 
-                <a href=""></a>
+                
+                
                 <?php foreach($nav as $title => $link): ?>
                 <a class="text-white text-decoration-none fs-4 m-2" href="<?= $link?>" class="m-3 myNav"><?= $title ?></a>
                 <?php endforeach; ?>
@@ -79,8 +81,12 @@ if(session_status()==PHP_SESSION_NONE){
                 <h1><?= $lap['cena']?>:RSD</h1>
 
                 <?php if(isset($_SESSION['email']) && $_SESSION['email'] == true):  ?>
+                    <form action="model/buy.php" method="post">
+                        <input type="text" name="kolicina" placeholder="quantity">
+                        <input type="hidden"name="idProizvod" value="<?= $id ?>" >
+                        <button type="submit" class="btn btn-success">BUY</button>
+                    </form>
                     
-                    <a href="" class="btn btn-success">Buy</a>
                 <?php else: ?>
                     <a href="loginHtml.php" class="btn btn-info"> Login </a>
                 <?php endif; ?>

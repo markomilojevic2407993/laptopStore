@@ -10,7 +10,7 @@ if(session_status()==PHP_SESSION_NONE){
 $nav=[
     'Home'=>'index.php',
     'Shop'=>'shop.php,',
-    'About'=>'about.php',
+    //'About'=>'about.php',
     //'Contact'=>'contact.php',
     'login'=>'loginHtml.php',
     'input'=>'inputHtml.php'
