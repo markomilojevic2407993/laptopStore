@@ -18,7 +18,7 @@ require_once "baza.php";
 
 $kolicina=$_POST['kolicina'];
 $idProizvod=$_POST['idProizvod'];
-$idKorisnik=$_SESSION['email'];
+$idKorisnik=$_SESSION['korisnik']['idKorisnika'];
 $rezultat=$baza->query("SELECT cena FROM laptop WHERE id='$idProizvod'");
 $cena=$rezultat->fetch_assoc();
 $racun=$cena['cena']*$kolicina;

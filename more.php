@@ -49,8 +49,8 @@ if(session_status()==PHP_SESSION_NONE){
 <div class="container text-center bg-primary navigacija">
         <div class="row">
         <div class="col">
-        <?php if(isset($_SESSION['email'])):?>
-                    <p>pozdrav:<?=$_SESSION['email'];?></p>
+        <?php if(isset($_SESSION['korisnik'])):?>
+                    <p>pozdrav:<?=$_SESSION['korisnik']['email'];?></p>
                     <a class="btn btn-danger" href="model/logout.php">Logout</a>
                 <?php endif;?>
         </div>
@@ -80,7 +80,7 @@ if(session_status()==PHP_SESSION_NONE){
                 <p class="card-text"><?= $lap['opis'];?></p>
                 <h1><?= $lap['cena']?>:RSD</h1>
 
-                <?php if(isset($_SESSION['email']) && $_SESSION['email'] == true):  ?>
+                <?php if(isset($_SESSION['korisnik']) && $_SESSION['korisnik'] == true):  ?>
                     <form action="model/buy.php" method="post">
                         <input type="text" name="kolicina" placeholder="quantity">
                         <input type="hidden"name="idProizvod" value="<?= $id ?>" >

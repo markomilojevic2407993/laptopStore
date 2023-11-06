@@ -17,7 +17,10 @@ if($rezultat->num_rows>0){
     if(session_status()==PHP_SESSION_NONE){
         session_start();
     }
-    $_SESSION['email']=$email;
+    //var_dump($rezultat, $_POST);exit;
+    $korisnik=$rezultat->fetch_assoc();
+    $_SESSION['korisnik']=$korisnik;
+    //$_SESSION['id']=$korisnik['idKorisnika'];
 
     header('Location: ../index.php');
 }else{

@@ -5,7 +5,7 @@ if(session_status()==PHP_SESSION_NONE){
     session_start();
 }
 
-//$_SESSION['email'];
+
 
 $nav=[
     'Home'=>'index.php',
@@ -13,8 +13,11 @@ $nav=[
     //'About'=>'about.php',
     //'Contact'=>'contact.php',
     'login'=>'loginHtml.php',
-    'input'=>'inputHtml.php'
+    
 ];
+if(isset($_SESSION['korisnik'])&&$_SESSION['korisnik']['uloga']=='admin'){
+    $nav['input']='inputHtml.php';
+}
 $navSocial = [
     'https://www.facebook.com/' => 'img/facebook.svg',
     'https://www.youtube.com/'=>'img/youtube.svg',
@@ -53,8 +56,8 @@ $laptop=$rezultat->fetch_all(MYSQLI_ASSOC);
 <div class="container bg-info text-center ">
     <div class="row text-white">
         <div class="col">
-            <?php if(isset($_SESSION['email'])){
-                echo '<p>Pozdrav: ' . $_SESSION['email'] . ' <a href="model/logout.php">Logout</a></p>';
+            <?php if(isset($_SESSION['korisnik'])){
+                echo '<p>Pozdrav: ' . $_SESSION['korisnik']['email'] . ' <a href="model/logout.php">Logout</a></p>';
             }?>
             
             <p>Besplatna dostava 067/099-909</p>
